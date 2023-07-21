@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_control : MonoBehaviour
 {
 
-    //체력, 이동속도, 방어력, 방호력
+    //체력, 이동속도, 방어력, 방호력, 회전 속도
     public float Player_hp;
 
     public float Player_speed;
@@ -13,6 +13,8 @@ public class Player_control : MonoBehaviour
     public float Player_defence;
 
     public float Player_protection;
+
+    public float Rotation_speed;
 
     //Rigidbody2d 와 Vector 값을 받기
     public Rigidbody2D R_b2;
