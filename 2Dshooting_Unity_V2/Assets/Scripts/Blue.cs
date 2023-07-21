@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Blue : Player_control
 {
-
+    //탱크가 사용하는 Gun의 좌표, 탱크와 Gun의 벡터를 저장할 변수
     public Transform Gun;
 
     public Vector2 Tank_gun_vec;
@@ -18,6 +18,7 @@ public class Blue : Player_control
         //시작 시 main camera 받기
         Cam = Camera.main;
 
+        //생성시, Gun의 transform 정보 가져오기
         Gun = transform.Find("Blue_gun");
     }
 

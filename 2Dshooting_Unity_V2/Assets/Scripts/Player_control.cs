@@ -16,6 +16,17 @@ public class Player_control : MonoBehaviour
 
     public float Rotation_speed;
 
+    //한 탄창의 총알 수, 클릭 당 총알 수, 
+    public int Megazine;
+
+    public int Click_per_bullets;
+
+    //한 클릭에 총알이 여러발 나갈 때, 총알이 나가는 interval 변수
+    public float Multiple_bullet_interval;
+
+    //매 사격 당 interval 조절 변수
+    public float Click_interval;
+
     //Rigidbody2d 와 Vector 값을 받기
     public Rigidbody2D R_b2;
 
