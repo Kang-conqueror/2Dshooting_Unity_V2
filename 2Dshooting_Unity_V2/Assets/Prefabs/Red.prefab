@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 2798567927631786123}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1102848864216879725
 SpriteRenderer:
@@ -104,12 +104,21 @@ MonoBehaviour:
   Player_speed: 0
   Player_defence: 0
   Player_protection: 0
+  Rotation_speed: 0
+  Megazine: 0
+  Click_per_bullets: 0
+  Multiple_bullet_interval: 0
+  Click_interval: 0
   R_b2: {fileID: 0}
   Move_vector: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
   Mouse_pos: {x: 0, y: 0}
   Angle2: {x: 0, y: 0}
   Angle3: {x: 0, y: 0, z: 0}
+  Gun: {fileID: 0}
+  Red_bullet: {fileID: 1691855333154821818, guid: c721144ff1f840c4bad2c065594fe6a5, type: 3}
+  Tank_gun_vec: {x: 0, y: 0}
+  Recoil_power: 0
 --- !u!50 &2723033617101443683
 Rigidbody2D:
   serializedVersion: 4

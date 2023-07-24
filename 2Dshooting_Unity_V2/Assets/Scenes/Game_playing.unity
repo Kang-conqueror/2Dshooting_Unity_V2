@@ -278,12 +278,36 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
+      propertyPath: Megazine
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
       propertyPath: Player_speed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
+      propertyPath: Recoil_power
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
+      propertyPath: Click_interval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
       propertyPath: Rotation_speed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
+      propertyPath: Reload_interval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
+      propertyPath: Click_per_bullets
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
+      propertyPath: Multiple_bullet_interval
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 283531883336663501, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
       propertyPath: m_Name

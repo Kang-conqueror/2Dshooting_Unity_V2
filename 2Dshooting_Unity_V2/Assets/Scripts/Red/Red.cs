@@ -18,9 +18,8 @@ public class Red : Player_control
     //탱크마다 사용하는 총의 수가 다르니, 반동 변수를 탱크에서 선언
     public float Recoil_power;
 
-    //연사 간격 제어를 위해, 매 사격 당 Time을 받을 변수 선언
-    public float Shoot_time;
-
+    //재장전을 구현하기 위해 재장전 시점의 시간을 저장할 변수
+    public float Reload_time;
 
 
 
@@ -37,11 +36,11 @@ public class Red : Player_control
         //생성시, Gun의 transform 정보 가져오기
         Gun = transform.Find("Red_gun");
 
-        //현재 시간에서, Player_control에서 가져온 클릭 interval를 빼주어 시작하자마자 사격이 가능하게함
-        Shoot_time = Time.time - Click_interval;
-
         //Player_control에서 가져온 Megazine(탄창 당 총알 수)를 현재 총알 수에 대입, 바로 사격 가능하게함
         Loaded_bullets = Megazine;
+
+        //
+        Reload_time = Time.time - Reload_interval;
 
 
         //Coroutine 활성화시키기
@@ -59,12 +58,12 @@ public class Red : Player_control
 
         while (true) {
 
-            //마우스 좌클릭을 입력받았을 때(클릭, 꾹 누르고 있기 둘다 가능)
-            if (Input.GetMouseButton(0)) {
+            //장전된 총알이 남아있을 때
+            if (Loaded_bullets > 0) {
 
-                //Player_control에서 가져온 Click_interval 의 시간보다 더 지났을 경우 
-                if (Time.time - Shoot_time >= Click_interval) {
-                    
+                //마우스 클릭을 입력받았을 때
+                if (Input.GetMouseButton(0)) {
+
                     //Player_control에서 가져온 Click_per_bullets, 한 클릭 당 나가는 총알 수만큼
                     //반복문을 돌려 총알을 생성시킴
                     for (int i = 0; i < Click_per_bullets; i++) {
@@ -74,24 +73,24 @@ public class Red : Player_control
                         Invoke("Shoot", Multiple_bullet_interval * i);
                         Invoke("Recoil", Multiple_bullet_interval * i);
 
-    
-
                     }
 
-                    //사격 후 Loaded_bullets 에서 1을 빼 탄약 소모 표시
+                    //장전된 총알 수 -= 1
                     Loaded_bullets -= 1;
 
+                    //Player_control에서 가져온, Click_interval(클릭 interval, 연사 속도 조절 변수)
+                    //WaitforSeconds를 통해 interval만큼 대기, if절에 접근하지 않게 함
+                    yield return new WaitForSeconds(Click_interval);
 
                 }
 
-
+                yield return new WaitForSeconds(0f);
             }
 
-
-        }
+            yield return new WaitForSeconds(0f);
+        }    
     }
-
-
+    
 
     // Update is called once per framew
     void Update()
@@ -125,13 +124,32 @@ public class Red : Player_control
         }
 
 
-
-
-
-
-
+        Reload();
 
     }
+
+
+    //시간의 흐름에 따라 자동으로 재장전을 해주는 함수
+    //Invoke를 안쓰고 어떻게 구현하지?
+    private void Reload() {
+
+        //현재 장전된 총알 수가 최대가 아닌 경우
+        if (Loaded_bullets < Megazine) {
+
+            //매 Reload_interval 마다 총알 추가
+            if (Time.time - Reload_time >= Reload_interval) {
+                
+                //총알 추가 후, Time.time으로 현재 시각 대입해주기
+                Loaded_bullets += 1;
+                Reload_time = Time.time;
+
+            }
+
+        }
+
+    }
+
+
 
     //충돌 판정
     private void OnTriggerEnter2D(Collider2D other) {
