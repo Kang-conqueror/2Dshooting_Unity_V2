@@ -283,11 +283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
       propertyPath: Player_speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
       propertyPath: Recoil_power
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -1835828047392437814, guid: 44ce3a1d66040664e8b5f254ec0a6f32, type: 3}
       propertyPath: Click_interval

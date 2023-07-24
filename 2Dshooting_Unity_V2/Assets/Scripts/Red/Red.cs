@@ -21,7 +21,8 @@ public class Red : Player_control
     //재장전을 구현하기 위해 재장전 시점의 시간을 저장할 변수
     public float Reload_time;
 
-
+    //총알의 탄퍼짐 정도를 우주선에서 선언
+    public float Spread_bullet;
 
 
     // Start is called before the first frame update
@@ -108,6 +109,7 @@ public class Red : Player_control
         //탱크 중앙에서 포신으로 향하는 벡터값을 구하기
         Tank_gun_vec = (Vector2)Gun.transform.position - (Vector2)transform.position;
 
+        
         //Tank_gun_vec과 Angle2의 각도를 구해, 180보다 적으면 위로, 크면 아래로 회전?
         float A = Quaternion.FromToRotation(Tank_gun_vec, Angle2).eulerAngles.z;
 

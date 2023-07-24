@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7614519374226212363}
   - component: {fileID: -9052760352234451312}
   - component: {fileID: -7900011316258663641}
+  - component: {fileID: 4832905337233651084}
   m_Layer: 0
   m_Name: Red_bullet
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7614519374226212363
 SpriteRenderer:
@@ -148,3 +149,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4832905337233651084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691855333154821818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef54b49a7f6590442a9aa62f8b3ae43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_hp: 0
+  Player_speed: 0
+  Player_defence: 0
+  Player_protection: 0
+  Rotation_speed: 0
+  Megazine: 0
+  Click_per_bullets: 0
+  Reload_interval: 0
+  Multiple_bullet_interval: 0
+  Click_interval: 0
+  R_b2: {fileID: 0}
+  Move_vector: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
+  Mouse_pos: {x: 0, y: 0}
+  Angle2: {x: 0, y: 0}
+  Angle3: {x: 0, y: 0, z: 0}
+  Gun: {fileID: 0}
+  Red_bullet: {fileID: 0}
+  Tank_gun_vec: {x: 0, y: 0}
+  Recoil_power: 0
+  Reload_time: 0
+  Spread_bullet: 5
+  Bullet_type: 0
+  Bullet_dmg: 0
+  Bullet_hp: 0
+  Bullet_speed: 5
+  Red: {fileID: 0}
